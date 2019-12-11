@@ -1,6 +1,6 @@
 FROM centos:7
 
-ENV DIAMOND_URL=http://files.latticesemi.com/Diamond/3.11/diamond_3_11-base_x64-396-4-x86_64-linux.rpm DIAMOND_DIR=/usr/local/diamond/3.11_x64
+ENV DIAMOND_URL=http://files.latticesemi.com/Diamond/3.6/diamond_3_6-base_x64-83-4-x86_64-linux.rpm DIAMOND_DIR=/usr/local/diamond/3.6_x64
 ENV bindir=$DIAMOND_DIR/bin/lin64 \
  QT_GRAPHICSSYSTEM=native \
  DIAMOND_TEMP_FILE=/tmp/diamond.rpm
