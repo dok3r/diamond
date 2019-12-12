@@ -34,11 +34,7 @@ export ETHMAC=your-mac-from-license
 export XSOCK=/tmp/.X11-unix
 export XAUTH=/tmp/.docker.xauth
 xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
-docker run -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH alpin3/ulx3s-qt
 docker run -it -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e LM_LICENSE_FILE=/fpga/license.dat --mac-address=$ETHMAC --privileged --ipc host -v /host/fpga:/fpga  -v /dev/bus/usb/:/dev/bus/usb/ dok3r/diamond:latest
 ```
-
-
-
 
 
