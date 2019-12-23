@@ -18,7 +18,7 @@ RUN yum update -y ; \
  rpm -i $DIAMOND_TEMP_FILE && \
  rm -f $DIAMOND_TEMP_FILE && \
  echo "source $DIAMOND_DIR/bin/lin64/diamond_env" > /etc/profile.d/diamond.sh && \
- curl https://raw.githubusercontent.com/emard/ulx3s-bin/master/fpga/diamond/diamond-fix-scripts/platform_check.patch | patch -d $DIAMOND_DIR/synpbase/bin/config -p0 && \
+ curl https://gist.githubusercontent.com/kost/8f306da40bccc35d74127fc04bbf1e55/raw/2047ce97c62089fa190d2c9f3eb754615be86794/platform_check.diff | patch -d $DIAMOND_DIR/synpbase/bin/config -p0 && \
  echo "[Success]"
 
 ENTRYPOINT ["/bin/bash"]
