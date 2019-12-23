@@ -11,11 +11,13 @@ RUN yum update -y ; \
   tcl tcsh perl libXft xorg-x11-fonts-Type1 net-tools \
   libXScrnSaver-1.2.2 \
   libusb-0.1.4 usbutils \
-  wget && \
+  make libxslt \
+  wget curl && \
  wget $DIAMOND_URL -O $DIAMOND_TEMP_FILE && \
  rpm -i $DIAMOND_TEMP_FILE && \
  rm -f $DIAMOND_TEMP_FILE && \
  echo "source $DIAMOND_DIR/bin/lin64/diamond_env" > /etc/profile.d/diamond.sh && \
+ curl https://github.com/emard/ulx3s-bin/blob/master/fpga/diamond/diamond-fix-scripts/platform_check.patch | patch -d $bindir -p0 && \
  echo "[Success]"
 
 ENTRYPOINT ["/bin/bash"]
