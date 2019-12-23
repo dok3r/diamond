@@ -12,6 +12,7 @@ RUN yum update -y ; \
   libXScrnSaver-1.2.2 \
   libusb-0.1.4 usbutils \
   make libxslt \
+  patch \
   wget curl && \
  wget $DIAMOND_URL -O $DIAMOND_TEMP_FILE && \
  rpm -i $DIAMOND_TEMP_FILE && \
